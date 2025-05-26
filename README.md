@@ -32,19 +32,8 @@ This repository hosts the source code for my professional online portfolio, a dy
 
 ---
 ## 📁 Project Structure
-.
-├── public/                 # Static assets
-├── src/                    # Main application source code
-│   ├── assets/             # Images, icons, etc.
-│   ├── components/         # Reusable React components
-│   ├── pages/              # Top-level page components
-│   ├── App.jsx             # Main application component
-│   └── main.jsx            # Entry point for React application
-├── .gitignore              # Files ignored by Git
-├── index.html              # Main HTML file
-├── package.json            # Project dependencies and scripts
-├── vite.config.js          # Vite configuration
-└── README.md               # This README file
+![image](https://github.com/user-attachments/assets/597c2b2c-2b16-4cf1-a575-605e22cd2ccc)
+
 
 ---
 
