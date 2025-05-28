@@ -23,7 +23,6 @@ This repository hosts the source code for my professional online portfolio, a dy
 
 - **React:** JavaScript library for building robust and scalable user interfaces.
 - **Vite:** Fast build tool with HMR and optimized production builds.
-- **Spline:** For crafting and integrating interactive 3D scenes.
 - **JavaScript (ES6+):** For all interactive logic.
 - **HTML5 & CSS3:** Structure and style the visual presentation.
 
