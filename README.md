@@ -8,9 +8,6 @@ This repository hosts the source code for my professional online portfolio, a dy
 
 ## ✨ Key Features
 
-- **Immersive 3D Background:**  
-  Leverages [Spline](https://spline.design/) to create a unique and interactive three-dimensional environment, enhancing the user experience with engaging visuals.
-
 - **Responsive and Adaptive Design:**  
   Engineered with **React** and **Vite** to ensure a seamless and intuitive experience across various devices, from desktops to mobile phones.
 
