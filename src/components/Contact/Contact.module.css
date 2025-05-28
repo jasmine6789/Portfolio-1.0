@@ -104,7 +104,7 @@
 }
 
 .sendBtn {
-    background: #a259f7;
+    background: var(--color-primary);
     color: #fff;
     font-size: 22px;
     font-weight: 500;
@@ -116,7 +116,7 @@
 }
 
 .sendBtn:hover {
-    background: #7c3aed;
+    background: var(--color-secondary);
 }
 
 .status {
@@ -159,7 +159,19 @@
 
 .directIcon {
     font-size: 24px;
-    color: var(--color-primary);
+    /* Default color removed for specificity below */
+}
+
+.directRow:nth-child(1) .directIcon {
+    color: #2196f3; /* Phone - blue */
+}
+
+.directRow:nth-child(2) .directIcon {
+    color: #e53935; /* Location - red */
+}
+
+.directRow:nth-child(3) .directIcon {
+    color: #757575; /* Neutral grey */
 }
 
 .textContainer {
@@ -186,6 +198,13 @@
     text-decoration: none;
     color: var(--color-text);
     transition: all 0.3s ease;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 .socialIconLink:hover {
@@ -384,4 +403,10 @@
     .socialRow {
         gap: 15px;
     }
+}
+
+:root[data-theme="light"] .form input,
+:root[data-theme="light"] .form textarea {
+    background: var(--color-bg-secondary);
+    color: #1a1a1a;
 }

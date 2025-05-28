@@ -30,9 +30,10 @@
 }
 
 .educationItem {
-  background-color: var(--color-dark); /* Match background of experience items */
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
   border-radius: 10px;
-  padding: 20px; /* Add padding back to items */
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 

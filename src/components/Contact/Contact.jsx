@@ -104,7 +104,7 @@ const Contact = () => {
         </form>
 
         <div className={styles.directContactSection}>
-          <h3 className={styles.directTitle}>Reach out directly</h3>
+          <h3 className={styles.directTitle}>Reach out directly!</h3>
           <div className={styles.directInfo}>
             <div className={styles.directRow}>
               <MdPhone className={styles.directIcon} />

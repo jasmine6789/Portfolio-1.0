@@ -1,10 +1,11 @@
 @import "./vars.css";
 
 .App {
-    /* background-color: var(--color-bg); */
-    background-image: radial-gradient(at 70% top, rgba(26, 26, 46, 0.8), rgba(12, 12, 18, 1)); /* Dark radial gradient for overall background */
-    width: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     min-height: 100vh;
+    transition: background-color var(--transition-medium), color var(--transition-medium);
+    width: 100%;
     overflow-x: hidden;
     padding-top: 80px;
     position: relative;
