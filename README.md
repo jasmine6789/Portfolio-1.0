@@ -1,12 +1,48 @@
-# React + Vite
+# My Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo:** [https://portfolio-nu-one-95.vercel.app/](https://portfolio-nu-one-95.vercel.app/)
 
-Currently, two official plugins are available:
+This repository hosts the source code for my professional online portfolio, a dynamic and interactive platform designed to showcase my skills, projects, and capabilities as a developer. This portfolio serves as a central hub for my work, demonstrating a blend of modern web development practices and creative design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Immersive 3D Background:**  
+  Leverages [Spline](https://spline.design/) to create a unique and interactive three-dimensional environment, enhancing the user experience with engaging visuals.
+
+- **Responsive and Adaptive Design:**  
+  Engineered with **React** and **Vite** to ensure a seamless and intuitive experience across various devices, from desktops to mobile phones.
+
+- **Showcase of Work:**  
+  A dedicated section to highlight key projects, providing descriptions, technologies used, and direct links to live demos or repositories.
+
+- **Optimized Performance:**  
+  Built with **Vite** for rapid development, efficient bundling, and optimized loading times, ensuring a smooth user journey.
+
+---
+
+## 🛠 Technologies & Tools
+
+- **React:** JavaScript library for building robust and scalable user interfaces.
+- **Vite:** Fast build tool with HMR and optimized production builds.
+- **Spline:** For crafting and integrating interactive 3D scenes.
+- **JavaScript (ES6+):** For all interactive logic.
+- **HTML5 & CSS3:** Structure and style the visual presentation.
+
+---
+## 📁 Project Structure
+![image](https://github.com/user-attachments/assets/597c2b2c-2b16-4cf1-a575-605e22cd2ccc)
+
+
+---
+
+## 🚀 Getting Started (For Developers)
+
+To run this project locally, follow these steps:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-portfolio-repo.git
+cd your-portfolio-repo
