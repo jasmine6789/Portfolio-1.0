@@ -1,0 +1,293 @@
+@import "../../vars.css";
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0; /* Remove horizontal padding */
+  color: var(--color-text);
+  background-color: transparent; /* Revert to transparent to inherit App background */
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.skills {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+.skillImageContainer {
+  background-color: var(--color-secondary);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill:hover .skillImageContainer {
+  background-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.skillImageContainer img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill p {
+  font-size: 18px;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  text-align: center;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.history::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-secondary);
+  opacity: 0.6;
+}
+
+.historyItem {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  width: 48%;
+}
+
+:root[data-theme="light"] .historyItem {
+  background-color: #fffee8;
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  top: 18px;
+  box-shadow: 0 0 0 4px rgba(87,108,188,0.25);
+  z-index: 2;
+}
+
+.left .dot {
+  right: -18px;
+  transform: translateX(50%);
+}
+
+.right .dot {
+  left: -18px;
+  transform: translateX(-50%);
+}
+
+.left { align-self: flex-start; margin-right: auto; }
+.right { align-self: flex-end; margin-left: auto; }
+
+.cardCol { display: flex; flex-direction: column; flex-grow: 1; }
+
+.historyItemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.companyRow {
+  margin-bottom: 2px;
+}
+
+.companyName {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-primary);
+  font-style: normal;
+  margin-bottom: 4px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.dateCol {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.location {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.location::before {
+  content: "•";
+  margin-right: 8px;
+  color: var(--color-text-secondary);
+}
+
+.historyItemDetails p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.bullets {
+  padding-left: 0;
+  margin-top: 8px;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bullets li {
+  line-height: 1.6;
+  font-size: 15px;
+  padding-left: 20px;
+  position: relative;
+  color: var(--color-text);
+}
+
+.bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.toolsRow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+
+.tool { background-color: var(--color-primary); color: #fff; padding: 4px 12px; border-radius: 999px; font-size: 12px; }
+
+:root[data-theme="light"] .tool {
+  background-color: var(--color-pill-light);
+  color: #1a1a1a;
+}
+
+:root[data-theme="dark"] .tool {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0; /* Remove horizontal padding on mobile */
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .history {
+    gap: 20px;
+  }
+
+  .history::before { left: 22px; }
+  .dot { 
+    left: 16px !important;
+    right: auto !important;
+  }
+  .historyItem { width: 100%; padding: 12px; }
+  .left, .right { align-self: auto; margin: 0; }
+
+  .roleTitle {
+    font-size: 20px;
+  }
+
+  .companyName {
+    font-size: 16px;
+  }
+
+  .metaRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .location::before {
+    display: none;
+  }
+
+  .bullets li {
+    font-size: 14px;
+  }
+
+  .toolsRow {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tool {
+    font-size: 10px;
+  }
+}

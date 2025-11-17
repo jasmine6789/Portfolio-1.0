@@ -1,0 +1,103 @@
+@import "../../vars.css";
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--color-bg-secondary);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+:root[data-theme="light"] .card {
+  background-color: #fffee8;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.04), 0 0 20px rgba(255, 254, 232, 0.6), 0 0 30px rgba(255, 254, 232, 0.4);
+}
+
+:root[data-theme="light"] .card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.04), 0 0 20px rgba(255, 254, 232, 0.8), 0 0 30px rgba(255, 254, 232, 0.6);
+}
+
+.badge {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
+}
+
+.certTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 40px 20px;
+  }
+  
+  .title { 
+    font-size: 1.75rem;
+    margin-bottom: 32px;
+  }
+  
+  .grid { 
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+

@@ -1,0 +1,225 @@
+@import "../../vars.css";
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 60px;
+    min-height: calc(100vh - 100px);
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 40px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--color-text);
+    z-index: 1;
+    width: 50%;
+    flex: 1;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    font-family: var(--font-roboto);
+    color: var(--color-text);
+    -webkit-text-fill-color: unset;
+    -webkit-background-clip: unset;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title .lastName {
+    margin-top: 0;
+}
+
+.aboutText {
+    font-size: 15px;
+    font-family: var(--font-roboto);
+    margin-bottom: 12px;
+    max-width: 600px;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin-top: 4px;
+}
+
+.contactLinks {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.contactBtn {
+    text-decoration: none;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactBtn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+
+.resumeBtn {
+    text-decoration: none;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resumeBtn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+
+.imageWrapper {
+    position: relative;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+    padding-top: 60px;
+}
+
+.heroImg{
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+@keyframes floating{
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.typewriterLine {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+  min-height: 28px;
+  margin-bottom: 6px;
+  font-family: var(--font-roboto);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  display: inline-block;
+  width: 12px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 22px;
+  animation: blink 1s steps(2, start) infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-text);
+    font-size: 14px;
+    font-family: var(--font-roboto);
+    font-weight: 400;
+    z-index: 1;
+    animation: fadeInOut 2s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.scrollArrow {
+    color: var(--color-primary);
+    font-size: 24px;
+    animation: bounceDown 2s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@media screen and (max-width: 830px) {
+    .container {
+        flex-direction: column-reverse;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .contactLinks { flex-direction: column; gap: 12px; }
+
+    .imageWrapper {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .heroImg {
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .typewriterLine {
+        font-size: 15px;
+        min-height: 20px;
+        margin-bottom: 6px;
+    }
+    .cursor {
+        font-size: 15px;
+        width: 7px;
+    }
+}
