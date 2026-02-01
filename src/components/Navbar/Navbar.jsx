@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styles from './Navbar.module.css';
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 import { useTheme } from '../../context/ThemeContext';
 
 console.log("Navbar rendered");
@@ -30,8 +30,8 @@ export const Navbar = ({ activeSection }) => {
                 <a href="https://github.com/jasmine6789" target="_blank" rel="noopener noreferrer" title="GitHub">
                     <FaGithub className={styles.icon} />
                 </a>
-                <a href="https://www.instagram.com/j.a.s.m.i.n.e_c/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                    <FaInstagram className={styles.icon} />
+                <a href="/JasmineChristopher.pdf" download title="Download Resume">
+                    <FaFileDownload className={styles.icon} />
                 </a>
             </div>
 

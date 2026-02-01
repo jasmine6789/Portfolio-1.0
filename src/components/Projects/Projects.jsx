@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Projects.module.css";
-import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 // Custom descriptions for each project
 const projectDescriptions = {
@@ -55,111 +55,92 @@ const customProjectOrder = [
   "Eardrum-image-classification",
   "Stock-Market-Forecasting-Integrating-LSTM-and-Random-Forest-Model",
   "Reddit-Network-Analysis",
-  // Add other project names here in your desired order
-  // "other-project-1",
-  // "other-project-2",
 ];
 
-const glideInVariantTop = {
-  hidden: { opacity: 0, y: -50 }, // Start from 50px above and fully transparent
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } } // Glide down to original position and fully opaque
-};
+// Fallback projects when API fails or returns empty – ensures projects always show
+const fallbackRepos = customProjectOrder.map((name, i) => ({
+  id: `fallback-${i}`,
+  name,
+  html_url: `https://github.com/jasmine6789/${name.replace(/\s/g, "-")}`,
+  description: "",
+}));
 
-const glideInVariantBottom = {
-  hidden: { opacity: 0, y: 100 }, // Start from 100px below and fully transparent
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } } // Glide up to original position and fully opaque
-};
-
-const PROJECTS_PER_PAGE = 4; // Define how many projects to show initially
+const PROJECTS_PER_PAGE = 4;
 
 export const Projects = () => {
-  const [allRepos, setAllRepos] = useState([]);
-  const [visibleRepos, setVisibleRepos] = useState([]);
-  const listRef = useRef(null);
+  const [allRepos, setAllRepos] = useState(fallbackRepos);
+  const [visibleRepos, setVisibleRepos] = useState(fallbackRepos.slice(0, PROJECTS_PER_PAGE));
 
   useEffect(() => {
     fetch("https://api.github.com/users/jasmine6789/repos?per_page=100")
       .then(res => res.json())
       .then(data => {
-        // Exclude the jasmine6789 repo
+        if (!Array.isArray(data)) {
+          setAllRepos(fallbackRepos);
+          setVisibleRepos(fallbackRepos.slice(0, PROJECTS_PER_PAGE));
+          return;
+        }
         const filtered = data.filter(repo => repo.name !== "jasmine6789");
 
-        // Sort based on customProjectOrder
+        if (filtered.length === 0) {
+          setAllRepos(fallbackRepos);
+          setVisibleRepos(fallbackRepos.slice(0, PROJECTS_PER_PAGE));
+          return;
+        }
+
         const sorted = filtered.sort((a, b) => {
           const indexA = customProjectOrder.indexOf(a.name);
           const indexB = customProjectOrder.indexOf(b.name);
-
-          // If both are in the custom list, sort by their index
-          if (indexA !== -1 && indexB !== -1) {
-            return indexA - indexB;
-          }
-          // If only a is in the custom list, a comes first
-          if (indexA !== -1) {
-            return -1;
-          }
-          // If only b is in the custom list, b comes first
-          if (indexB !== -1) {
-            return 1;
-          }
-          // If neither is in the custom list, sort by creation date (or another criteria)
+          if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+          if (indexA !== -1) return -1;
+          if (indexB !== -1) return 1;
           const yearA = new Date(a.created_at).getFullYear();
           const yearB = new Date(b.created_at).getFullYear();
-          return yearB - yearA; // Default sort by year descending for projects not in custom list
+          return yearB - yearA;
         });
 
         setAllRepos(sorted);
-        setVisibleRepos(sorted.slice(0, PROJECTS_PER_PAGE)); // Show initial projects based on custom order
+        setVisibleRepos(sorted.slice(0, PROJECTS_PER_PAGE));
+      })
+      .catch(() => {
+        setAllRepos(fallbackRepos);
+        setVisibleRepos(fallbackRepos.slice(0, PROJECTS_PER_PAGE));
       });
   }, []);
 
-  const handleLoadMore = () => {
-    setVisibleRepos(allRepos); // Show all projects
-  };
-
-  const scrollLeft = () => {
-    if (listRef.current) listRef.current.scrollBy({ left: -400, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    if (listRef.current) listRef.current.scrollBy({ left: 400, behavior: "smooth" });
-  };
-
   return (
     <section className={styles.container} id="projects">
-      <motion.h2 
+      <motion.h2
         className={styles.title}
-        variants={glideInVariantTop}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 0.5 }}
       >
         Projects
       </motion.h2>
-      <button aria-label="Scroll left" className={`${styles.scrollBtn} ${styles.left}`} onClick={scrollLeft}>
-        <FaChevronLeft />
-      </button>
-      <div className={styles.projects} ref={listRef}>
-        {visibleRepos.map((repo, idx) => {
+      <div className={styles.projects}>
+        {visibleRepos.map((repo) => {
           const projectDetail = projectDetails[repo.name] || {};
           const projectDescription = projectDescriptions[repo.name] || repo.description || "No description available. See the source for more details.";
-          
+
           return (
-            <CardWithTilt key={repo.id} repo={repo} projectDetail={projectDetail} projectDescription={projectDescription} />
+            <CardWithTilt
+              key={repo.name}
+              repo={repo}
+              projectDetail={projectDetail}
+              projectDescription={projectDescription}
+            />
           );
         })}
       </div>
-      <button aria-label="Scroll right" className={`${styles.scrollBtn} ${styles.right}`} onClick={scrollRight}>
-        <FaChevronRight />
-      </button>
-      <motion.a 
+      <motion.a
         href="https://github.com/jasmine6789?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.loadMoreButton}
-        variants={glideInVariantBottom}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
       >
         View More Projects
       </motion.a>
@@ -167,15 +148,13 @@ export const Projects = () => {
   );
 };
 
-// New CardWithTilt component to handle the tilt effect for each card
 const CardWithTilt = ({ repo, projectDetail, projectDescription }) => {
   return (
     <motion.div
       className={styles.projectCard}
-      variants={glideInVariantBottom}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <img 
         src={projectDetail.imageUrl}

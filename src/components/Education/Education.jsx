@@ -1,90 +1,89 @@
-import React from 'react';
-import styles from './Education.module.css';
-import { motion } from 'framer-motion';
+import React from "react";
+import styles from "./Education.module.css";
+import { motion } from "framer-motion";
 
-const glideInVariantBottom = {
-  hidden: { opacity: 0, y: 100 }, // Start from 100px below and fully transparent
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } } // Glide up to original position and fully opaque
-};
-
-const glideInVariantTop = {
-  hidden: { opacity: 0, y: -50 }, // Start from 50px above and fully transparent
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } } // Glide down to original position and fully opaque
-};
+const educationData = [
+  {
+    logo: "/Indiana University Bloomington.png",
+    logoAlt: "Indiana University",
+    dates: "August 2024 - May 2026",
+    degree: "Master of Science in Data Science",
+    institution: "Indiana University - Bloomington, USA",
+    coursework: [
+      "Applied Machine Learning",
+      "Statistics",
+      "Advanced Database Technologies",
+      "Security For Networked Systems",
+      "Social Media Mining",
+      "Database Design",
+      "Usable AI",
+    ],
+    cgpa: "3.7/4",
+  },
+  {
+    logo: "/Panimalar Eng College.png",
+    logoAlt: "Panimalar Engineering College",
+    dates: "August 2018 - May 2022",
+    degree: "Bachelor of Engineering in Electronics and Instrumentation",
+    institution: "Anna University - Chennai, India",
+    coursework: [
+      "Object Oriented Programming",
+      "Data Structures & Algorithms",
+      "Cloud Computing",
+      "Intro to Python Programming",
+      "Image Processing",
+      "C Programming",
+    ],
+    cgpa: "8.6/10",
+  },
+];
 
 export const Education = () => {
-  const masterCoursework = [
-    "Applied Machine Learning",
-    "Statistics",
-    "Advanced Database Technologies",
-    "Security For Networed Systems",
-    "Social Media Mining",
-    "Database Design",
-    "Usable AI"
-  ];
-
-  const bachelorCoursework = [
-    "Object Oriented Programming",
-    "Data Structures & Algorithms",
-    "Cloud Computing",
-    "Intro to Python Programming",
-    "Image Processing",
-    "C Programming"
-  ];
-
   return (
-    <section 
-      className={styles.container}
-      id="education"
-    >
-      <motion.h2 
+    <section className={styles.container} id="education">
+      <motion.h2
         className={styles.title}
-        variants={glideInVariantTop}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 1.5 }}
       >
         Education
       </motion.h2>
       <div className={styles.educationItems}>
-        <motion.div 
-          className={styles.educationItem}
-          variants={glideInVariantBottom}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <img className={styles.bannerImg} src={'/Indiana University Bloomington.png'} alt="Indiana University Bloomington" />
-          
-          <div className={styles.educationItemText}>
-            <h3>Master of Science in Data Science</h3>
-            <p>Indiana University - Bloomington, USA</p> 
-            <p className={styles.dates}>August 2024 - May 2026</p>
-            <p>
-              <span className={styles.courseworkHeading}>Coursework: </span>{masterCoursework.join(', ')}
+        {educationData.map((item, idx) => (
+          <motion.div
+            key={idx}
+            className={styles.educationItem}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <div className={styles.logoWrapper}>
+              <motion.img
+                className={styles.schoolLogo}
+                src={item.logo}
+                alt={item.logoAlt}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+            <div className={styles.educationItemText}>
+              <p className={styles.dates}>{item.dates}</p>
+              <h3 className={styles.degree}>{item.degree}</h3>
+              <p className={styles.institution}>{item.institution}</p>
+              <p className={styles.courseworkBlock}>
+                <span className={styles.courseworkLabel}>Coursework: </span>
+                <span className={styles.courseworkList}>{item.coursework.join(", ")}</span>
               </p>
-            <p>CGPA: 3.6/4</p>
-          </div>
-        </motion.div>
-        <motion.div 
-          className={styles.educationItem}
-          variants={glideInVariantBottom}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <img className={styles.bannerImg} src={'/Panimalar Eng College.png'} alt="Panimalar Engineering College" />
-          <div className={styles.educationItemText}>
-            <h3>Bachelor of Engineering in Electronics and Instrumentation</h3>
-            <p>Anna University - Chennai, India</p>
-            <p className={styles.dates}>August 2018 - May 2022</p>
-             <p>
-              <span className={styles.courseworkHeading}>Coursework: </span> {bachelorCoursework.join(', ')}
-            </p>
-            <p>CGPA: 8.6/10</p>
-          </div>
-        </motion.div>
+              <p className={styles.cgpaBlock}>
+                <span className={styles.cgpaLabel}>CGPA: </span>
+                <span className={styles.cgpaScore}>{item.cgpa}</span>
+              </p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
-}; 
+};

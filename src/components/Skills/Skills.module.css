@@ -11,14 +11,15 @@
   background-color: transparent;
 }
 
+/* Exactly 2 rows: 7 columns (13 skills = 7 + 6) */
 .skillsRow {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
   justify-content: center;
   align-items: center;
   gap: 24px;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 48px 10%;
   border-radius: 0;
 }
@@ -100,8 +101,8 @@
 
 @media screen and (max-width: 900px) {
   .skillsRow {
+    grid-template-columns: repeat(7, 60px);
     gap: 16px;
-    flex-wrap: wrap;
     padding: 24px 5%;
     max-width: 100%;
   }

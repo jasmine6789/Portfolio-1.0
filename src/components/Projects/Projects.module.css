@@ -8,10 +8,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: transparent; /* Revert to transparent to inherit App background */
-    position: relative; /* anchor absolute scroll buttons */
+    background-color: transparent;
     width: 80%;
-    padding: 0 56px; /* reserve space for scroll arrows so they don't overlap cards */
+    padding: 0;
 }
 
 .title {
@@ -24,17 +23,13 @@
 }
 
 .projects {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 10px 6px 16px 6px;
+    padding: 0;
 }
 
 @media screen and (max-width: 830px) {
@@ -48,17 +43,11 @@
     }
 
     .projects {
-        gap: 20px; /* Adjusted gap for mobile */
-        max-width: 100%; /* Allow full width on smaller screens */
-        justify-content: center; /* Center items on mobile */
-    }
-
-    .projectCard {
-        width: 100%; /* Full width on very small screens */
-        max-width: 320px; /* Limit card width on mobile */
+        gap: 20px;
     }
 }
 
+/* No transition on transform – Framer Motion controls the glide animation */
 .projectCard {
     background-color: var(--color-bg-secondary);
     color: var(--color-text);
@@ -67,34 +56,29 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    min-width: 320px; /* slightly narrower to reduce overlap */
-    padding-bottom: 20px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-    position: relative; /* anchor github icon bottom-right */
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 12px;
+    transition: box-shadow 0.2s ease;
+    position: relative;
 }
 
 :root[data-theme="light"] .projectCard {
     background-color: #fffee8;
 }
 
-@media screen and (max-width: 768px) { /* Adjust breakpoint if needed */
-    .projectCard {
-        width: calc(50% - 10px); /* Adjust width for smaller screens if gap changes */
-    }
-}
-
-@media screen and (max-width: 500px) { /* Stack cards on very small screens */
-    .projectCard {
-        width: 100%;
+@media screen and (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
     }
 }
 
 .projectImage {
     width: 100%;
-    height: 220px; /* taller image as requested */
-    object-fit: cover; /* Cover the area without distorting aspect ratio */
-    border-radius: 10px; /* Rounded corners on all sides */
-    margin: 10px; /* margin around image */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 8px;
 }
 
 .projectCard:hover {
@@ -106,44 +90,47 @@
 }
 
 .projectContent {
-    padding: 14px 16px;
+    padding: 12px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .projectTitle {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .projectCategory {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    color: #DAA520; /* Gold color for category */
-    margin-bottom: 10px;
+    color: #DAA520;
+    margin-bottom: 4px;
 }
 
 .projectDescription {
     font-size: 14px;
     color: var(--color-text);
     line-height: 1.5;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .projectTools {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto; /* Push tools to the bottom */
+    gap: 6px;
+    margin-top: auto;
 }
 
 .projectTool {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--color-primary);
-    /* Remove any background or border to look like hashtags */
 }
 
 /* Remove or adjust existing styles that conflict with the new design */
@@ -260,8 +247,8 @@
 
 @media screen and (max-width: 830px) {
     .projectCard {
-        width: 100%; /* Full width on smaller screens */
-        max-width: 300px; /* Limit width if needed */
+        min-width: 300px;
+        max-width: 100%;
     }
 
     .projectContent {
@@ -338,11 +325,11 @@
 
 .githubLink {
     position: absolute;
-    bottom: 15px; /* Adjust as needed */
-    right: 15px; /* Adjust as needed */
-    color: #fff; /* White color for the icon */
-    font-size: 24px; /* Adjust size as needed */
-    z-index: 10; /* Ensure it's above other content */
+    bottom: 10px;
+    right: 12px;
+    color: #fff;
+    font-size: 20px;
+    z-index: 10;
 }
 
 .githubIcon {
@@ -356,24 +343,3 @@
 :root[data-theme="dark"] .githubIcon {
     color: #fff;
 }
-
-.scrollBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: #fff;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    border: none;
-    box-shadow: none; /* remove glow */
-    cursor: pointer;
-    z-index: 5;
-}
-
-.left { left: 12px; }
-.right { right: 12px; }

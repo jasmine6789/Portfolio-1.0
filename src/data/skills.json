@@ -4,10 +4,6 @@
       "imageSrc": "skills/html.png"
     },
     {
-      "title": "CSS3",
-      "imageSrc": "skills/css.png"
-    },
-    {
       "title": "JavaScript",
       "imageSrc": "skills/js.png"
     },
@@ -28,7 +24,35 @@
       "imageSrc": "skills/r.png"
     },
     {
-      "title": "MySQL",
-      "imageSrc": "skills/adobe.png"
+      "title": "AWS",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "Docker",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "SQL Server",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "PostgreSQL",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "MongoDB",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "Git",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "FastAPI",
+      "imageSrc": "skills/react.png"
+    },
+    {
+      "title": "C#",
+      "imageSrc": "skills/react.png"
     }
 ]

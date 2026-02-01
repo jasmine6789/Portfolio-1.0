@@ -1,82 +1,91 @@
 [
     {
-      "role": "Teaching Assistant",
-      "organisation": "Indiana University Bloomington",
+      "role": "Associate Instructor",
+      "organisation": "Luddy School of Informatics, Computing, and Engineering",
       "location": "Bloomington, IN",
-      "startDate": "August 2024",
+      "startDate": "January 2026",
       "endDate": "Present",
       "tools": ["Python", "Jupyter Notebooks", "nbgrader"],
       "bullets": [
-        "Assist in course delivery for 50+ graduate students, supporting instruction on Python fundamentals such as loops, functions, data structures, and file I/O using Jupyter Notebooks.",
-        "Conduct frequent office hours, guiding students through debugging, code optimization, and conceptual understanding to strengthen their programming proficiency.",
-        "Evaluate and provide detailed feedback on coding assignments and Jupyter notebooks using nbgrader, ensuring academic integrity and consistent grading standards across multiple sections."
+        "Support course delivery and instruction for graduate-level coursework.",
+        "Hold office hours and provide guidance on assignments and projects.",
+        "Assist with grading and feedback on student submissions."
       ],
-      "imageSrc": "history/google.png"
+      "imageSrc": "/Indiana University Bloomington.png"
+    },
+    {
+      "role": "Associate Instructor",
+      "organisation": "Luddy School of Informatics, Computing, and Engineering",
+      "location": "Bloomington, IN",
+      "startDate": "August 2025",
+      "endDate": "December 2025",
+      "tools": ["Python", "NumPy", "Pandas", "Matplotlib", "Scikit-Learn"],
+      "bullets": [
+        "Mentored 70+ graduate students in Python, Data Structures, NumPy, Pandas, Matplotlib, and Scikit-learn through labs, office hours, and 1:1 debugging support.",
+        "Coordinated with a team of teaching assistants to deliver weekly lab sessions and provide hands-on technical guidance.",
+        "Co-developed and delivered lectures with the professor, designing practical coding exercises, quizzes, and structured problem-solving activities.",
+        "Evaluated student projects by grading assignments, reviewing code quality, improving modularity, and reinforcing best practices in algorithms, data analysis, and visualization."
+      ],
+      "imageSrc": "/Indiana University Bloomington.png"
     },
     {
       "role": "AI/ML Engineer",
       "organisation": "riAI Capital Ltd",
       "location": "Remote",
-      "startDate": "June 2024",
-      "endDate": "Present",
-      "tools": ["Python", "LangChain", "OpenAI", "Vector DB", "AWS", "FastAPI"],
+      "startDate": "June 2025",
+      "endDate": "December 2025",
+      "tools": ["Python", "RAG","LangChain", "OpenAI", "Pinecone", "Bedrock", "AWS IAM", "AWS EKS/ECS", "Kalfka", "FastAPI"],
       "bullets": [
-        "Designed multi-agent workflows for research, summarization, and decision support.",
-        "Built retrieval-augmented generation (RAG) pipelines over financial filings and market data.",
-        "Implemented tax-optimization engines combining ML signals with rule-based strategies.",
-        "Deployed scalable APIs on AWS with secure access and observability."
+        "Designed and deployed RAG pipelines on AWS (S3, Lambda) to automate Investment Policy Statement generation, combining LLM reasoning with contextual retrieval via a Pinecone vector store to personalize client plans, reducing advisor preparation time by 80%.",
+        "Built a real-time tax optimization service on Kafka streams with Llama-3 based reasoning, delivering ranked, auditable recommendations, deployed as containerized microservices on AWS ECS/EKS, improving decision speed by 40% for 20+ advisors.",
+        "Engineered an integration layer exposing FastAPI/GraphQL endpoints to connect Wealthbox, RightCapital, Schwab, and Black Diamond, enabling secure data exchange and supporting 50K+ monthly API requests via AWS API Gateway.",
+        "Implemented zero-trust data governance (IAM, AES-256, audit logging) aligned with SOC2 and GDPR compliance requirements."
       ],
-      "imageSrc": "history/google.png"
+      "imageSrc": "/riAI Capital.png"
     },
     {
-      "role": "Software Engineer",
+      "role": "Software Engineer - Supply chain",
       "organisation": "Mindsprint",
       "location": "Chennai, India",
       "startDate": "January 2023",
-      "endDate": "June 2024",
-      "tools": [".NET Core", "Angular", "AWS", "EC2", "RDS", "C#", "AWS Lambda", "S3", "CloudWatch", "REST APIs", "gRPC", "AsyncAPI", "Power BI"],
-      "bullets": [
-        "Helped develop MESlite, a proprietary Manufacturing Execution System built with .NET Core, Angular, and AWS (EC2, RDS), enabling real-time production tracking, secure access, and analytics dashboards.",
-        "Assisted in automating XML-to-relational ETL pipelines using C#, AWS Lambda, and RDS, with S3 staging and CloudWatch monitoring for reliable data ingestion and visibility.",
-        "Contributed to redesigning data exchange architecture by implementing REST APIs for ERP and gRPC + AsyncAPI for SCADA, enabling near real-time communication between machines and cloud systems.",
-        "Created and customized over 30 real-time dashboards and reports using Power BI and Angular visualizations, reducing manual reporting overhead by 40% and enabling KPI-driven insights.",
-        "Enhanced system security by implementing MFA and role-based authorization in .NET and Angular, aligning with enterprise compliance and governance standards.",
-        "Collaborated with cross-functional teams in Vietnam to define requirements and support MESlite adoption across multiple manufacturing sites, improving production efficiency and workflow transparency."
-      ],
-      "imageSrc": "history/mindsprint.png"
-    },
-    {
-      "role": "Junior MES Engineer",
-      "organisation": "Mindsprint (COVL)",
-      "location": "Chennai, India",
-      "startDate": "July 2022",
-      "endDate": "January 2023",
-      "tools": ["SQL Server", "C#", "SSRS", "QuickScript.NET", "JavaScript", "Aveva tools"],
-      "bullets": [
-        "Enhanced production productivity by 30% through implementing and optimizing the Evaporation Line, improving data collection, analysis accuracy, and system responsiveness.",
-        "Designed and optimized automated control systems, streamlining multi-line operations and minimizing production bottlenecks across manufacturing workflows.",
-        "Developed automated reporting features within the MES, enabling real-time performance analytics and saving approximately 15 hours per week previously spent on manual report compilation.",
-        "Resolved critical technical issues in real time, achieving a 90% reduction in system downtime and ensuring continuous, reliable production flow.",
-        "Collaborated with on-site teams in Vietnam for over two months to develop and enhance plant lines, driving operational improvements through strong communication, technical coordination, and process optimization."
-      ],
-      "imageSrc": "history/mindsprint.png"
-    },
-    {
-      "role": "Junior MES Engineer",
-      "organisation": "Mindsprint (Ducati)",
-      "location": "Chennai, India",
-      "startDate": "January 2022",
-      "endDate": "July 2022",
-      "tools": ["SQL Server", "C#", "SSRS", "QuickScript.NET", "JavaScript", "Aveva tools", "SAP", "Wonderware Edge Server", "System Platform IDE"],
-      "bullets": [
-        "Supported MES implementation for a roasted nuts facility in Vietnam, customizing system functionality to meet specialized production requirements and ensuring seamless integration with SAP modules (MM, QM, PP, PM).",
-        "Designed a dynamic recipe management system integrated with SAP MM, enabling precise process control and automated material consumption tracking.",
-        "Developed end-to-end material traceability from raw material receipt to finished goods, synchronizing inventory data in real time between MES and SAP.",
-        "Built a lab QC module that allowed technicians to input quality parameters directly into MES, automating batch approvals via SAP QM integration.",
-        "Integrated machine sensors using Wonderware Edge Server, capturing process data in SQL and visualizing performance metrics through System Platform IDE, which triggered SAP PM maintenance alerts.",
-        "Engineered custom scheduling tools with two-way communication to SAP PP, improving resource allocation and production planning.",
-        "Developed analytics dashboards combining MES and SAP data, providing real-time insights that enhanced production efficiency and traceability across operations."
-      ],
-      "imageSrc": "history/mindsprint.png"
+      "endDate": "July 2024",
+      "imageSrc": "/Mindsprint.png",
+      "projects": [
+        {
+          "name": "MESLite",
+          "tools": [".NET Core", "Angular", "C#", "SQL Server","AWS", "EC2", "RDS",  "AWS Lambda", "S3", "Cloudwatch", "REST", "gRPC", "RBAC", "MFA"],
+          "bullets": [
+            "Spearheaded development of MESLite, an in-house .NET Core manufacturing execution system deployed on AWS (EC2, RDS), enabling real-time production monitoring and analytics while eliminating third-party MES licensing costs (aprox.$50K per plant annually).",
+            "Built C# based ETL pipelines with AWS Lambda and S3 staging to transform XML machine and ERP data into normalized SQL Server tables, improving data freshness and reducing manual reconciliation effort by 60%.",
+            "Designed REST/gRPC integrations between SCADA systems and cloud services to enable near real-time production synchronization, reducing data latency from 15–30 minute batch updates to under 10 seconds.",
+            "Developed SQL Server backed SSRS reports for scheduled operational analytics and built Angular dashboards consuming live APIs for real-time KPI monitoring, reducing manual reporting by 40%.",
+            "Implemented RBAC and multi-factor authentication (MFA) for operator and admin access, strengthening application security and compliance with enterprise policies."
+          ]
+        },
+        {
+          "name": "COVL",
+          "tools": ["SQL Server", "C#", "SSRS", "QuickScript.NET", "JavaScript", "Aveva tools"],
+          "bullets": [
+            "Enhanced production productivity by 30% through implementing and optimizing the Evaporation Line, improving data collection, analysis accuracy, and system responsiveness.",
+            "Designed and optimized automated control systems, streamlining multi-line operations and minimizing production bottlenecks across manufacturing workflows.",
+            "Developed automated reporting features within the MES, enabling real-time performance analytics and saving approximately 15 hours per week previously spent on manual report compilation.",
+            "Resolved critical technical issues in real time, achieving a 90% reduction in system downtime and ensuring continuous, reliable production flow.",
+            "Collaborated with on-site teams in Vietnam for over two months to develop and enhance plant lines, driving operational improvements through strong communication, technical coordination, and process optimization."
+          ]
+        },
+        {
+          "name": "Ducati",
+          "tools": ["SQL Server", "C#", "SSRS", "QuickScript.NET", "JavaScript", "Aveva tools", "SAP", "Wonderware Edge Server", "System Platform IDE"],
+          "bullets": [
+            "Supported MES implementation for a roasted nuts facility in Vietnam, customizing system functionality to meet specialized production requirements and ensuring seamless integration with SAP modules (MM, QM, PP, PM).",
+            "Designed a dynamic recipe management system integrated with SAP MM, enabling precise process control and automated material consumption tracking.",
+            "Developed end-to-end material traceability from raw material receipt to finished goods, synchronizing inventory data in real time between MES and SAP.",
+            "Built a lab QC module that allowed technicians to input quality parameters directly into MES, automating batch approvals via SAP QM integration.",
+            "Integrated machine sensors using Wonderware Edge Server, capturing process data in SQL and visualizing performance metrics through System Platform IDE, which triggered SAP PM maintenance alerts.",
+            "Engineered custom scheduling tools with two-way communication to SAP PP, improving resource allocation and production planning.",
+            "Developed analytics dashboards combining MES and SAP data, providing real-time insights that enhanced production efficiency and traceability across operations."
+          ]
+        }
+      ]
     }
 ]

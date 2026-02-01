@@ -2,11 +2,6 @@ import React from 'react';
 import styles from './Certificates.module.css';
 import { motion } from 'framer-motion';
 
-const glideInVariantTop = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
-};
-
 export const Certificates = () => {
   const certs = [
     {
@@ -28,12 +23,11 @@ export const Certificates = () => {
 
   return (
     <section className={styles.container} id="certificates">
-      <motion.h2 
+      <motion.h2
         className={styles.title}
-        variants={glideInVariantTop}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 1.5 }}
       >
         Certifications
       </motion.h2>
@@ -45,11 +39,9 @@ export const Certificates = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.card}
-            variants={glideInVariantTop}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ delay: index * 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5 }}
           >
             <img
               src={cert.image}

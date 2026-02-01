@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Contact.module.css";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 import { MdPhone, MdLocationOn, MdEmail } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -43,20 +43,17 @@ const Contact = () => {
     }
   };
 
-  const glideInVariantLeft = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } }
-  };
-
-  const glideInVariantRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } }
-  };
-
   return (
     <section className={styles.container} id="contact">
       <div className={styles.content}>
-        <h2 className={styles.title}>Contact Me</h2>
+        <motion.h2
+          className={styles.title}
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.5 }}
+        >
+          Contact Me
+        </motion.h2>
         <p className={styles.description}>
           <em>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</em>
         </p>
@@ -69,10 +66,9 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            variants={glideInVariantLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
           />
           <motion.input
             type="email"
@@ -81,10 +77,9 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            variants={glideInVariantRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.5 }}
           />
           <motion.textarea
             name="message"
@@ -92,10 +87,9 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            variants={glideInVariantLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
           />
           <button type="submit" className={styles.sendBtn}>
             Send Message
@@ -145,12 +139,12 @@ const Contact = () => {
             <FaGithub className={styles.icon} />
           </a>
           <a
-            href="https://www.instagram.com/j.a.s.m.i.n.e_c/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/JasmineChristopher.pdf"
+            download
             className={styles.socialIconLink}
+            title="Download Resume"
           >
-            <FaInstagram className={styles.icon} />
+            <FaFileDownload className={styles.icon} />
           </a>
         </div>
       </div>
