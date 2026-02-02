@@ -5,11 +5,11 @@
       "location": "Bloomington, IN",
       "startDate": "January 2026",
       "endDate": "Present",
-      "tools": ["Python", "Jupyter Notebooks", "nbgrader"],
+      "tools": ["IBM SPSS", "Simple & multiple linear regression","Marketing mix modeling", "Hypothesis testing (t-tests, chi-square)", "Time-series concepts"],
       "bullets": [
-        "Support course delivery and instruction for graduate-level coursework.",
-        "Hold office hours and provide guidance on assignments and projects.",
-        "Assist with grading and feedback on student submissions."
+        "Supported course development for a graduate-level Data Science in Business course focused on applied statistics, demand forecasting, and marketing mix modeling using IBM SPSS.",
+        "Assisted students in analyzing business datasets using simple and multiple regression, hypothesis testing, ANOVA, and time-series concepts, with emphasis on correct interpretation rather than prediction or causality",
+        "Guided students in translating SPSS output (coefficients, p-values, residuals, model fit) into clear business insights and data-driven recommendations."
       ],
       "imageSrc": "/Indiana University Bloomington.png"
     },

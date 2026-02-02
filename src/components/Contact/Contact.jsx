@@ -109,7 +109,7 @@ const Contact = () => {
             <div className={styles.directRow}>
               <MdLocationOn className={styles.directIcon} />
               <div className={styles.textContainer}>
-                <span>Address: Indianapolis, IN</span>
+                <span>Address: Indianapolis, IN - open to relocation</span>
               </div>
             </div>
             <div className={styles.directRow}>
